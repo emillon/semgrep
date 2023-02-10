@@ -341,7 +341,7 @@ jobs:
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_PR_TOKEN }}
         run: |
-          brew bump-formula-pr --dry-run --force --no-audit --no-browse \
+          brew bump-formula-pr --dry-run --force --no-audit --no-browse --verbose --debug \
             --message="Bump semgrep to version ${{ steps.get-version.outputs.VERSION }}" \
             --fork-org=returntocorp --tag="${{ steps.get-version.outputs.VERSION }}" semgrep
       - name: Open Brew PR on homebrew/homebrew-core
