@@ -343,7 +343,7 @@ jobs:
         run: |
           brew bump-formula-pr --dry-run --force --no-audit --no-browse --verbose --debug \
             --message="dry-run brew bump-formula-pr" \
-            --fork-org=returntocorp --tag="develop" semgrep
+            --fork-org=returntocorp --tag="v1.10.0" semgrep
       - name: Open Brew PR on homebrew/homebrew-core
         if: ${{ !contains(github.ref, '-test-release') && needs.dry-run.outputs.dry-run != 'true' }}
         env:
